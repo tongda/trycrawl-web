@@ -1,5 +1,4 @@
 require "sneakers"
-require "../models/app"
 
 class AppCollector
   include Sneakers::Worker
@@ -7,6 +6,6 @@ class AppCollector
 
   def work(msg)
     app = App.parse(msg)
-    
+    app.save
   end
 end
